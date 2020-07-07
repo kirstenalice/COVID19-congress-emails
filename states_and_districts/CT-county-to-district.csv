@@ -1,0 +1,20 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"09001","03","Fairfield CT",53742,0.059 
+"09001","04","Fairfield CT",702136,0.766 
+"09001","05","Fairfield CT",160951,0.176 
+"09003","01","Hartford CT",647876,0.725 
+"09003","02","Hartford CT",68674,0.077 
+"09003","05","Hartford CT",177464,0.199 
+"09005","01","Litchfield CT",38914,0.205 
+"09005","05","Litchfield CT",151013,0.795 
+"09007","01","Middlesex CT",28030,0.169 
+"09007","02","Middlesex CT",82702,0.499 
+"09007","03","Middlesex CT",54944,0.332 
+"09009","02","New Haven CT",18269,0.021 
+"09009","03","New Haven CT",606133,0.703 
+"09009","04","New Haven CT",12683,0.015 
+"09009","05","New Haven CT",225392,0.261 
+"09011","02","New London CT",274055,1 
+"09013","02","Tolland CT",152691,1 
+"09015","02","Windham CT",118428,1 

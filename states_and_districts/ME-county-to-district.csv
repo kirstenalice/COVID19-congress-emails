@@ -1,0 +1,19 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"23001","02","Androscoggin ME",107702,1 
+"23003","02","Aroostook ME",71870,1 
+"23005","01","Cumberland ME",281674,1 
+"23007","02","Franklin ME",30768,1 
+"23009","02","Hancock ME",54418,1 
+"23011","01","Kennebec ME",75889,0.621 
+"23011","02","Kennebec ME",46262,0.379 
+"23013","01","Knox ME",39736,1 
+"23015","01","Lincoln ME",34457,1 
+"23017","02","Oxford ME",57833,1 
+"23019","02","Penobscot ME",153923,1 
+"23021","02","Piscataquis ME",17535,1 
+"23023","01","Sagadahoc ME",35293,1 
+"23025","02","Somerset ME",52228,1 
+"23027","02","Waldo ME",38786,1 
+"23029","02","Washington ME",32856,1 
+"23031","01","York ME",197131,1 

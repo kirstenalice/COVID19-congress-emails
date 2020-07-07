@@ -1,0 +1,22 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"32001","02","Churchill NV",24877,1 
+"32003","01","Clark NV",675138,0.346 
+"32003","03","Clark NV",675138,0.346 
+"32003","04","Clark NV",600993,0.308 
+"32005","02","Douglas NV",46997,1 
+"32007","02","Elko NV",48818,1 
+"32009","04","Esmeralda NV",783,1 
+"32011","02","Eureka NV",1987,1 
+"32013","02","Humboldt NV",16528,1 
+"32015","02","Lander NV",5775,1 
+"32017","04","Lincoln NV",5345,1 
+"32019","02","Lyon NV",42712,0.822 
+"32019","04","Lyon NV",9268,0.178 
+"32021","04","Mineral NV",4772,1 
+"32023","04","Nye NV",43946,1 
+"32027","02","Pershing NV",6753,1 
+"32029","02","Storey NV",4010,1 
+"32031","02","Washoe NV",421407,1 
+"32033","04","White Pine NV",10030,1 
+"32510","02","Carson City NV",55274,1 

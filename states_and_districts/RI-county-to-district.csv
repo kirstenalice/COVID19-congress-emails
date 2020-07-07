@@ -1,0 +1,8 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"44001","01","Bristol RI",49875,1 
+"44003","02","Kent RI",166158,1 
+"44005","01","Newport RI",82888,1 
+"44007","01","Providence RI",393520,0.628 
+"44007","02","Providence RI",233147,0.372 
+"44009","02","Washington RI",126979,1 

@@ -1,0 +1,42 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"24001","06","Allegany MD",75087,1 
+"24003","02","Anne Arundel MD",82879,0.154 
+"24003","03","Anne Arundel MD",218099,0.406 
+"24003","04","Anne Arundel MD",179487,0.334 
+"24003","05","Anne Arundel MD",57191,0.106 
+"24005","01","Baltimore MD",54879,0.068 
+"24005","02","Baltimore MD",426822,0.53 
+"24005","03","Baltimore MD",135095,0.168 
+"24005","07","Baltimore MD",188233,0.234 
+"24009","05","Calvert MD",88737,1 
+"24011","01","Caroline MD",33066,1 
+"24013","01","Carroll MD",64960,0.389 
+"24013","08","Carroll MD",102174,0.611 
+"24015","01","Cecil MD",101108,1 
+"24017","05","Charles MD",146551,1 
+"24019","01","Dorchester MD",32618,1 
+"24021","06","Frederick MD",117162,0.502 
+"24021","08","Frederick MD",116223,0.498 
+"24023","06","Garrett MD",30097,1 
+"24025","01","Harford MD",153587,0.627 
+"24025","02","Harford MD",91239,0.373 
+"24027","02","Howard MD",38900,0.135 
+"24027","03","Howard MD",91701,0.319 
+"24027","07","Howard MD",156484,0.545 
+"24029","01","Kent MD",20197,1 
+"24031","03","Montgomery MD",109988,0.113 
+"24031","06","Montgomery MD",358738,0.369 
+"24031","08","Montgomery MD",503051,0.518 
+"24033","04","Prince Georges MD",540603,0.626 
+"24033","05","Prince Georges MD",322817,0.374 
+"24035","01","Queen Annes MD",47798,1 
+"24037","05","St. Marys MD",105151,1 
+"24039","01","Somerset MD",26470,1 
+"24041","01","Talbot MD",37782,1 
+"24043","06","Washington MD",147430,1 
+"24045","01","Wicomico MD",98733,1 
+"24047","01","Worcester MD",51454,1 
+"24510","02","Baltimore city MD",83605,0.135 
+"24510","03","Baltimore city MD",165211,0.266 
+"24510","07","Baltimore city MD",372145,0.599 

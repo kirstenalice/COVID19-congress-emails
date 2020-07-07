@@ -1,0 +1,154 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"51001","02","Accomack VA",33164,1 
+"51003","05","Albemarle VA",98970,1 
+"51005","09","Alleghany VA",16250,1 
+"51007","07","Amelia VA",12690,1 
+"51009","06","Amherst VA",32353,1 
+"51011","05","Appomattox VA",14973,1 
+"51013","08","Arlington VA",207627,1 
+"51015","06","Augusta VA",73750,1 
+"51017","06","Bath VA",4731,1 
+"51019","05","Bedford VA (R)",38987,0.568 
+"51019","06","Bedford VA (R)",29689,0.432 
+"51021","09","Bland VA",6824,1 
+"51023","06","Botetourt VA",33148,1 
+"51025","05","Brunswick VA",17434,1 
+"51027","09","Buchanan VA",24098,1 
+"51029","05","Buckingham VA",17146,1 
+"51031","05","Campbell VA",54842,1 
+"51033","01","Caroline VA",28545,1 
+"51035","09","Carroll VA",30042,1 
+"51036","04","Charles City VA",7256,1 
+"51037","05","Charlotte VA",12586,1 
+"51041","04","Chesterfield VA",95473,0.302 
+"51041","07","Chesterfield VA",220763,0.698 
+"51043","10","Clarke VA",14034,1 
+"51045","09","Craig VA",5190,1 
+"51047","07","Culpeper VA",46689,1 
+"51049","05","Cumberland VA",10052,1 
+"51051","09","Dickenson VA",15903,1 
+"51053","04","Dinwiddie VA",28001,1 
+"51057","01","Essex VA",11151,1 
+"51059","08","Fairfax VA",367441,0.34 
+"51059","10","Fairfax VA",186406,0.172 
+"51059","11","Fairfax VA",527879,0.488 
+"51061","01","Fauquier VA",14762,0.226 
+"51061","05","Fauquier VA",50441,0.774 
+"51063","09","Floyd VA",15279,1 
+"51065","05","Fluvanna VA",25691,1 
+"51067","05","Franklin VA",56159,1 
+"51069","10","Frederick VA",78305,1 
+"51071","09","Giles VA",17286,1 
+"51073","01","Gloucester VA",36858,1 
+"51075","07","Goochland VA",21717,1 
+"51077","09","Grayson VA",15533,1 
+"51079","05","Greene VA",18403,1 
+"51081","04","Greensville VA",12243,1 
+"51083","05","Halifax VA",36241,1 
+"51085","01","Hanover VA",99863,1 
+"51087","04","Henrico VA",84198,0.274 
+"51087","07","Henrico VA",222737,0.726 
+"51089","05","Henry VA",14472,0.267 
+"51089","09","Henry VA",39679,0.733 
+"51091","06","Highland VA",2321,1 
+"51093","03","Isle of Wight VA",35270,1 
+"51095","01","James City VA",50453,0.753 
+"51095","02","James City VA",16556,0.247 
+"51097","01","King and Queen VA",6945,1 
+"51099","01","King George VA",23584,1 
+"51101","01","King William VA",15935,1 
+"51103","01","Lancaster VA",11391,1 
+"51105","09","Lee VA",25587,1 
+"51107","10","Loudoun VA",312311,1 
+"51109","07","Louisa VA",33153,1 
+"51111","05","Lunenburg VA",12914,1 
+"51113","05","Madison VA",13308,1 
+"51115","01","Mathews VA",8978,1 
+"51117","05","Mecklenburg VA",32727,1 
+"51119","01","Middlesex VA",10959,1 
+"51121","09","Montgomery VA",94392,1 
+"51125","05","Nelson VA",15020,1 
+"51127","01","New Kent VA",18429,1 
+"51131","02","Northampton VA",12389,1 
+"51133","01","Northumberland VA",12330,1 
+"51135","07","Nottoway VA",15853,1 
+"51137","07","Orange VA",33481,1 
+"51139","06","Page VA",24042,1 
+"51141","09","Patrick VA",18490,1 
+"51143","05","Pittsylvania VA",63506,1 
+"51145","07","Powhatan VA",28046,1 
+"51147","05","Prince Edward VA",23368,1 
+"51149","04","Prince George VA",35725,1 
+"51153","01","Prince William VA",167068,0.416 
+"51153","10","Prince William VA",58012,0.144 
+"51153","11","Prince William VA",176922,0.44 
+"51155","09","Pulaski VA",34872,1 
+"51157","05","Rappahannock VA",7373,1 
+"51159","01","Richmond VA",9254,1 
+"51161","06","Roanoke VA",69185,0.749 
+"51161","09","Roanoke VA",23191,0.251 
+"51163","06","Rockbridge VA",22307,1 
+"51165","06","Rockingham VA",76314,1 
+"51167","09","Russell VA",28897,1 
+"51169","09","Scott VA",23177,1 
+"51171","06","Shenandoah VA",41993,1 
+"51173","09","Smyth VA",32208,1 
+"51175","04","Southampton VA",18570,1 
+"51177","01","Spotsylvania VA",30160,0.246 
+"51177","07","Spotsylvania VA",92237,0.754 
+"51179","01","Stafford VA",128961,1 
+"51181","04","Surry VA",7058,1 
+"51183","04","Sussex VA",12087,1 
+"51185","09","Tazewell VA",45078,1 
+"51187","05","Warren VA",133,0.004 
+"51187","06","Warren VA",37442,0.996 
+"51191","09","Washington VA",54876,1 
+"51193","01","Westmoreland VA",17454,1 
+"51195","09","Wise VA",41452,1 
+"51197","09","Wythe VA",29235,1 
+"51199","02","York VA",65464,1 
+"51510","08","Alexandria city VA",139966,1 
+"51515","05","Bedford city VA (D)",6222,1 
+"51520","09","Bristol city VA",17835,1 
+"51530","06","Buena Vista city VA",6650,1 
+"51540","05","Charlottesville city VA",43475,1 
+"51550","03","Chesapeake city VA",110405,0.497 
+"51550","04","Chesapeake city VA",111804,0.503 
+"51570","04","Colonial Heights city VA",17411,1 
+"51580","09","Covington city VA",5961,1 
+"51590","05","Danville city VA",43055,1 
+"51595","04","Emporia city VA",5927,1 
+"51600","11","Fairfax city VA",22565,1 
+"51610","08","Falls Church city VA",12332,1 
+"51620","03","Franklin city VA",8582,1 
+"51630","01","Fredericksburg city VA",24286,1 
+"51640","09","Galax city VA",7042,1 
+"51650","02","Hampton city VA",33630,0.245 
+"51650","03","Hampton city VA",103806,0.755 
+"51660","06","Harrisonburg city VA",48914,1 
+"51670","04","Hopewell city VA",22591,1 
+"51678","06","Lexington city VA",7042,1 
+"51680","06","Lynchburg city VA",75568,1 
+"51683","10","Manassas city VA",37821,1 
+"51685","10","Manassas Park city VA",14273,1 
+"51690","09","Martinsville city VA",13821,1 
+"51700","02","Newport News city VA",32,0 
+"51700","03","Newport News city VA",180687,1 
+"51710","02","Norfolk city VA",82672,0.34 
+"51710","03","Norfolk city VA",160131,0.66 
+"51720","09","Norton city VA",3958,1 
+"51730","04","Petersburg city VA",32420,1 
+"51735","02","Poquoson city VA",12150,1 
+"51740","03","Portsmouth city VA",95535,1 
+"51750","09","Radford city VA",16408,1 
+"51760","04","Richmond city VA",204214,1 
+"51770","06","Roanoke city VA",97032,1 
+"51775","09","Salem city VA",24802,1 
+"51790","06","Staunton city VA",23746,1 
+"51800","03","Suffolk city VA",52197,0.617 
+"51800","04","Suffolk city VA",32388,0.383 
+"51810","02","Virginia Beach city VA",437994,1 
+"51820","06","Waynesboro city VA",21006,1 
+"51830","02","Williamsburg city VA",14068,1 
+"51840","10","Winchester city VA",26203,1 

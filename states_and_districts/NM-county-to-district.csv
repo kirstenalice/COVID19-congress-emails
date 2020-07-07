@@ -1,0 +1,42 @@
+"county","cd116","cntyname","pop10","afact"
+"County code","116th Congressional district","County name","Population (2010)","county to cd116 allocation factor"
+"35001","01","Bernalillo NM",632625,0.955 
+"35001","02","Bernalillo NM",2489,0.004 
+"35001","03","Bernalillo NM",27450,0.041 
+"35003","02","Catron NM",3725,1 
+"35005","02","Chaves NM",65645,1 
+"35006","02","Cibola NM",27213,1 
+"35007","03","Colfax NM",13750,1 
+"35009","03","Curry NM",48376,1 
+"35011","02","DeBaca NM",2022,1 
+"35013","02","Dona Ana NM",209233,1 
+"35015","02","Eddy NM",53829,1 
+"35017","02","Grant NM",29514,1 
+"35019","02","Guadalupe NM",4687,1 
+"35021","03","Harding NM",695,1 
+"35023","02","Hidalgo NM",4894,1 
+"35025","02","Lea NM",64727,1 
+"35027","02","Lincoln NM",20497,1 
+"35028","03","Los Alamos NM",17950,1 
+"35029","02","Luna NM",25095,1 
+"35031","02","McKinley NM",7001,0.098 
+"35031","03","McKinley NM",64491,0.902 
+"35033","03","Mora NM",4881,1 
+"35035","02","Otero NM",63797,1 
+"35037","03","Quay NM",9041,1 
+"35039","03","Rio Arriba NM",40246,1 
+"35041","02","Roosevelt NM",7010,0.353 
+"35041","03","Roosevelt NM",12836,0.647 
+"35043","01","Sandoval NM",20593,0.157 
+"35043","03","Sandoval NM",110968,0.843 
+"35045","03","San Juan NM",130044,1 
+"35047","03","San Miguel NM",29393,1 
+"35049","01","Santa Fe NM",5390,0.037 
+"35049","03","Santa Fe NM",138780,0.963 
+"35051","02","Sierra NM",11988,1 
+"35053","02","Socorro NM",17866,1 
+"35055","03","Taos NM",32937,1 
+"35057","01","Torrance NM",16383,1 
+"35059","03","Union NM",4549,1 
+"35061","01","Valencia NM",11402,0.149 
+"35061","02","Valencia NM",65167,0.851 
