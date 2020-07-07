@@ -23,7 +23,7 @@ not_counties = {}
 #   and if the date falls in the range 1/22/20 - whatever the most updated date in time_......csv
 def valid_date(date):
     # reader for the csv file
-    cases_by_county = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    cases_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
     cases_by_county_reader = csv.reader(cases_by_county)
     # column headers    
     row = next(cases_by_county_reader)
@@ -48,7 +48,7 @@ def dates_between(start_date,end_date):
     
     dates = []
     # get time.....csv and find column headers that match start and end, avoids converting from string to date to string again
-    cases_by_county = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    cases_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
     cases_by_county_reader = csv.reader(cases_by_county)
     # column headers    
     row = next(cases_by_county_reader)
@@ -87,7 +87,7 @@ def dates_between(start_date,end_date):
 # returns number of cases in a county
 def get_total_county_case_data(county,state):
     # reader for the csv file
-    cases_by_county = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    cases_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
     cases_by_county_reader = csv.reader(cases_by_county)
     # column headers    
     row = next(cases_by_county_reader)
@@ -110,7 +110,7 @@ def get_total_county_case_data(county,state):
 # returns number of cases in a county between start_date and end_date, returns None if parameters are invalid
 def get_county_case_data(county,state,start_date,end_date):
     # reader for the csv file
-    cases_by_county = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    cases_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
     cases_by_county_reader = csv.reader(cases_by_county)
 
     start_date_split = [int(s) for s in start_date.split("/")]
@@ -170,7 +170,7 @@ def get_state_case_data(state,date):
         print("date not valid",date)
         return None
 
-    cases_by_county = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    cases_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
     cases_by_county_reader = csv.reader(cases_by_county)
     # column headers    
     row = next(cases_by_county_reader)
@@ -209,7 +209,7 @@ def get_case_by_district(state,date):
 
     global not_counties
     districts = {}
-    district_data = open('states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
+    district_data = open('./states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
 
     district_reader = csv.reader(district_data)
     
@@ -279,7 +279,7 @@ def get_all_cases_by_district_over_time(start_date,end_date):
         return None
 
     print("Creating csv of cases by Congressional District between",start_date,"and",end_date+"...")
-    file = open('deaths_by_district/cases_by_district_'+start_date.replace("/","_")+'_to_'+end_date.replace("/","_")+'.csv','w',newline='')
+    file = open('./deaths_by_district/cases_by_district_'+start_date.replace("/","_")+'_to_'+end_date.replace("/","_")+'.csv','w',newline='')
 
     writer = csv.writer(file)
     dates = dates_between(start_date,end_date)
@@ -302,7 +302,7 @@ if __name__ == '__main__':
     url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv'
     r = requests.get(url, allow_redirects=True)
 
-    f = open('CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv', 'wb')
+    f = open('./CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv', 'wb')
     f.write(r.content)
 
     
@@ -312,7 +312,7 @@ if __name__ == '__main__':
 
     #print(get_state_case_data("Alaska","4/20/20"))
     '''
-    cases_by_district = open('deaths_by_district/cases_by_district.csv','w',newline='\n')
+    cases_by_district = open('./deaths_by_district/cases_by_district.csv','w',newline='\n')
 
     district_writer = csv.writer(cases_by_district)
     district_writer.writerow(['state','district','cases'])

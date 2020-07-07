@@ -120,9 +120,9 @@ def get_name_congress(_from):
 
 
 if __name__ == "__main__":
-    reader = csv.reader(open('laina/immigration.csv',newline=''))
+    reader = csv.reader(open('./laina/immigration.csv',newline=''))
 
-    writer = csv.writer(open('laina/immigration-names.csv',"w",newline='\n'))
+    writer = csv.writer(open('./laina/immigration-names.csv',"w",newline='\n'))
 
     # append new row that contains full name of congressperson
     

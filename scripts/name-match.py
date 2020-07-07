@@ -15,7 +15,7 @@ def find_congress_data(emails_row):
 
     # bioname = col 9 in data
     
-    data = open('hs116-members.csv',newline='')
+    data = open('./hs116-members.csv',newline='')
     data_reader = csv.reader(data)
     
     # gets column names
@@ -72,15 +72,15 @@ def find_congress_data(emails_row):
 if __name__ == "__main__":
     print('starting name matching....')
     # file with emails in it
-    emails = open('covid19-dem-names.csv',newline='')
+    emails = open('./covid19-dem-names.csv',newline='')
     # file with congresspeople data in it
-    data = open('hs116-members.csv',newline='')
+    data = open('./hs116-members.csv',newline='')
 
     emails_reader = csv.reader(emails)
     data_reader = csv.reader(data)
 
     # file to have combined email and congresspeople data
-    writer = csv.writer(open('covid19-dem-emails-and-data.csv',"w",newline='\n'))
+    writer = csv.writer(open('./covid19-dem-emails-and-data.csv',"w",newline='\n'))
 
     emails_colnames = next(emails_reader)[0:6]
     data_colnames = next(data_reader)[0:21]

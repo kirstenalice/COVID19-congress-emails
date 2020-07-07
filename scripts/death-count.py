@@ -22,7 +22,7 @@ not_counties = {}
 # returns number of deaths in a county
 def get_county_death_data(county,state):
     # reader for the csv file
-    deaths_by_county = open('CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
     # column headers    
     row = next(deaths_by_county_reader)
@@ -40,7 +40,7 @@ def get_county_death_data(county,state):
 # {"County State" : county covid-deaths}, ex. {"Atlantic NJ", ###}
 # NOTE: sometimes the total deaths from this function are different than total deaths in get_death_by_district because there are rows with deaths not based in a county, some for a city etc.
 def get_state_death_data(state):
-    deaths_by_county = open('CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('./CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
     # column headers    
     row = next(deaths_by_county_reader)
@@ -65,7 +65,7 @@ def get_state_death_data(state):
 def get_death_by_district(state):
     global not_counties
     districts = {}
-    district_data = open('states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
+    district_data = open('./states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
 
     district_reader = csv.reader(district_data)
     
@@ -98,7 +98,7 @@ def get_death_by_district(state):
     return districts
 
 if __name__ == '__main__':
-    deaths_by_district = open('deaths_by_district/deaths_by_district.csv','w',newline='\n')
+    deaths_by_district = open('./deaths_by_district/deaths_by_district.csv','w',newline='\n')
 
     district_writer = csv.writer(deaths_by_district)
     district_writer.writerow(['state','district','deaths'])

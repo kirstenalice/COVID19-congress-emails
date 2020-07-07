@@ -19,7 +19,7 @@ import json
 frequencies = {}
 
 stop_words = stopwords.words('english')
-# make another list of stopwords to add to this, like '6pm' and phon numbers and 'lindsey cormack'
+# make another list of stopwords to add to this, like '6pm' and phone numbers and 'lindsey cormack'
 
 def count_words(email):
     for word in email:
@@ -29,7 +29,7 @@ def count_words(email):
             frequencies[word] = 1
 
 if __name__ == '__main__':
-    f = open('stopwords_lindsey.txt','r')
+    f = open('./stopwords_lindsey.txt','r')
     line = f.readline()
     try:
         while line:
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         party = input('Democrat or Republican? (D or R): ')
 
 
-    data_file_name = 'covid19-dem-emails-and-data.csv' if party.lower() == 'd' else 'covid19-rep-emails-and-data.csv'
+    data_file_name = './covid19-dem-emails-and-data.csv' if party.lower() == 'd' else 'covid19-rep-emails-and-data.csv'
 
     data = open(data_file_name,newline='')
 
@@ -77,9 +77,9 @@ if __name__ == '__main__':
     frequencies = {k : v for k, v in sorted(frequencies.items(), key=lambda item: item[1],reverse=True) if v > 1}
     frequencies_file_name = ""
     if(month == 0):
-        frequencies_file_name = ('dem-frequencies.txt') if party.lower() == 'd' else ('rep-frequencies.txt')
+        frequencies_file_name = ('./dem-frequencies.txt') if party.lower() == 'd' else ('rep-frequencies.txt')
     else:
-        frequencies_file_name = ('dem-frequencies-'+ str(month) +'-2020.txt') if party.lower() == 'd' else ('rep-frequencies-'+ str(month) +'-2020.txt')
+        frequencies_file_name = ('./dem-frequencies-'+ str(month) +'-2020.txt') if party.lower() == 'd' else ('rep-frequencies-'+ str(month) +'-2020.txt')
 
     with open(frequencies_file_name,'w') as file:
         party_string = 'Democrat' if party.lower() == 'd' else 'Republican'
