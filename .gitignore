@@ -4,7 +4,7 @@
 *.txt
 *.yaml
 *.csv
-8.xlsx
+*.xlsx
 **/scripts/emails-and-death-counts.py
 **/scripts/name-match.py
 **/scripts/name-strip.py
