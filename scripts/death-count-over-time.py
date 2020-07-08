@@ -327,7 +327,7 @@ if __name__ == '__main__':
     f = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
     f.write(r.content)
     
-    get_all_deaths_by_district_over_time("6/23/20","7/6/20")
+    get_all_deaths_by_district_over_time("6/23/20","7/7/20")
     '''
     #print(get_death_by_district_over_time("Louisiana","4/20/20","4/26/20"))
 
