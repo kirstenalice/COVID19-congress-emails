@@ -19,11 +19,19 @@ from nltk.tokenize import word_tokenize
 state_abbrev = {"Alabama" : "AL","Alaska" : "AK","Arizona" : "AZ","Arkansas" : "AR","California" : "CA","Colorado" : "CO","Connecticut" : "CT","Delaware" : "DE","Florida" : "FL","Georgia" : "GA","Hawaii" : "HI","Idaho" : "ID","Illinois" : "IL","Indiana" : "IN","Iowa" : "IA","Kansas" : "KS","Kentucky" : "KY","Louisiana" : "LA","Maine" : "ME","Maryland" : "MD","Massachusetts" : "MA","Michigan" : "MI","Minnesota" : "MN","Mississippi" : "MS","Missouri" : "MO","Montana" : "MT","Nebraska" : "NE","Nevada" : "NV","New Hampshire" : "NH","New Jersey" : "NJ","New Mexico" : "NM","New York" : "NY","North Carolina" : "NC","North Dakota" : "ND","Ohio" : "OH","Oklahoma" : "OK","Oregon" : "OR","Pennsylvania" : "PA","Rhode Island" : "RI","South Carolina" : "SC","South Dakota" : "SD","Tennessee" : "TN","Texas" : "TX","Utah" : "UT","Vermont" : "VT","Virginia" : "VA","Washington" : "WA","West Virginia" : "WV","Wisconsin" : "WI","Wyoming" : "WY"}
 not_counties = {}
 
+def update_death_data():
+    # Downloads most recent version of Johns Hopkins COVID19 death data
+    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
+    r = requests.get(url, allow_redirects=True)
+
+    f = open('../../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
+    f.write(r.content)
+
 # returns True if date is valid calendar date, ex: 6/45/20 -> False, 4/12/20 -> True
 #   and if the date falls in the range 1/22/20 - whatever the most updated date in time_......csv
 def valid_date(date):
     # reader for the csv file
-    deaths_by_county = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('../../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
     # column headers    
     row = next(deaths_by_county_reader)
@@ -34,11 +42,14 @@ def valid_date(date):
     try:
         parse(date)
     except ValueError:
+        deaths_by_county.close()
         return False
     date_split = [int(d) for d in date.split("/")]
     if(date_split[0] > recent_date[0] or date_split[0] < 1 or (date_split[0] == recent_date[0] and date_split[1] > recent_date[1]) or (date_split[0] == 1 and date_split[1] < 22) or date_split[2] != 20):
         print("invalid date: ",date)
+        deaths_by_county.close()
         return False
+    deaths_by_county.close()
     return True
 
 # returns list of dates between start_date and end_date as strings in MM/DD/YY form
@@ -48,7 +59,7 @@ def dates_between(start_date,end_date):
     
     dates = []
     # get time.....csv and find column headers that match start and end, avoids converting from string to date to string again
-    deaths_by_county = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('../../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
     # column headers    
     row = next(deaths_by_county_reader)
@@ -70,41 +81,15 @@ def dates_between(start_date,end_date):
         if(start_index > 0 and end_index > 0):
             if(start_index > end_index):
                 print("end date is chronologically before start date",start_date,end_date)
+                deaths_by_county.close()
                 return None
             else: 
                 break
 
     for x in range(start_index,end_index+1):
         dates += [row[x]]
+    deaths_by_county.close()
     return dates
-
-# county must be full name
-# state must be full name, not abbrev ex. "New Jersey", not "NJ"
-# returns number of deaths in a county
-def get_total_county_death_data(county,state):
-    # Downloads most recent version of Johns Hopkins COVID19 death data
-    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
-    r = requests.get(url, allow_redirects=True)
-
-    f = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
-    f.write(r.content)
-    f.close()
-
-    # reader for the csv file
-    deaths_by_county = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
-    deaths_by_county_reader = csv.reader(deaths_by_county)
-    # column headers    
-    row = next(deaths_by_county_reader)
-    try:
-        while row and not (row[5] == county and row[6] == state):
-            row = next(deaths_by_county_reader)
-    except StopIteration:
-        print("death data not found for",county,'county',state)
-        deaths_by_county.close()
-        return None
-    # print('Deaths in',county,'county,',state,':',row[len(row)-1])
-    deaths_by_county_reader.close()
-    return row[len(row)-1]
 
 # county must be full name
 # state must be full name, not abbrev ex. "New Jersey", not "NJ"
@@ -113,16 +98,8 @@ def get_total_county_death_data(county,state):
 #     ^^ (this date will change as the most up-to-date csv is redownloaded from github)
 # returns number of deaths in a county between start_date and end_date, returns None if parameters are invalid
 def get_county_death_data(county,state,start_date,end_date):
-    # Downloads most recent version of Johns Hopkins COVID19 death data
-    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
-    r = requests.get(url, allow_redirects=True)
-
-    f = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
-    f.write(r.content)
-    f.close()
-
     # reader for the csv file
-    deaths_by_county = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('../../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
 
     start_date_split = [int(s) for s in start_date.split("/")]
@@ -153,6 +130,7 @@ def get_county_death_data(county,state,start_date,end_date):
             if(start_index > 0 and end_index > 0):
                 if(start_index > end_index):
                     print("end date is chronologically before start date:",start_date,end_date)
+                    deaths_by_county.close()
                     return None
                 else: 
                     break
@@ -178,19 +156,11 @@ def get_county_death_data(county,state,start_date,end_date):
 # {"County State" : county covid-deaths}, ex. {"Atlantic NJ", ###}, returns None if parameters are invalid
 # NOTE: sometimes the total deaths from this function are different than total deaths in get_death_by_district because there are rows with deaths not based in a county, some for a city etc.
 def get_state_death_data(state,date):
-    # Downloads most recent version of Johns Hopkins COVID19 death data
-    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
-    r = requests.get(url, allow_redirects=True)
-
-    f = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
-    f.write(r.content)
-    f.close()
-
     if(not valid_date(date)):
         print("date not valid",date)
         return None
 
-    deaths_by_county = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
+    deaths_by_county = open('../../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv','r')
     deaths_by_county_reader = csv.reader(deaths_by_county)
     # column headers    
     row = next(deaths_by_county_reader)
@@ -218,6 +188,44 @@ def get_state_death_data(state,date):
     deaths_by_county.close()
     return deaths_data
 
+# state must be full name ex: "New Jersey" NOT "NJ"
+# date must be no earlier than 1/22/20 and no later than 6/23/20 (or the most recent date w data)
+# returns death count in state on date
+# {"County State" : county covid-deaths}, ex. {"Atlantic NJ", ###}, returns None if parameters are invalid
+# NOTE: sometimes the total deaths from this function are different than total deaths in get_death_by_district because there are rows with deaths not based in a county, some for a city etc.
+def get_total_state_death_data(state,date):
+    if(not valid_date(date)):
+        print("date not valid",date)
+        return None
+
+    deaths_by_county = open('../../CSSEGIS-COVID-19/time_series_covid19_confirmed_US.csv','r')
+    deaths_by_county_reader = csv.reader(deaths_by_county)
+    # column headers    
+    row = next(deaths_by_county_reader)
+    column_headers = row
+
+    date_index = 0
+    date_split = [int(d) for d in date.split("/")]
+    for x in range(12,len(column_headers)):
+        col_date = [int(c) for c in column_headers[x].split("/")]
+        if(col_date == date_split):
+            date_index = x
+            break
+
+    deaths = 0
+    try:
+        while row:
+            if(state == row[6]):
+                key_name = (str(row[5])+" "+str(state_abbrev[state])).lower()
+                deaths += int(row[date_index])
+            row = next(deaths_by_county_reader)
+    except StopIteration:
+        deaths_by_county.close()
+        return deaths
+
+    deaths_by_county.close()
+    return deaths
+
 # county_info is 2D array, each row: [county name,state,county covid-deaths]
 # state must be full name, not abbrev ex. "New Jersey", not "NJ"
 # date must be no earlier than 1/22/20 and no later than the most recent day on time.....csv (MM/DD/YY)
@@ -229,7 +237,7 @@ def get_death_by_district(state,date):
 
     global not_counties
     districts = {}
-    district_data = open('../states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
+    district_data = open('../../states_and_districts/'+ state_abbrev[state] +'-county-to-district.csv','r')
 
     district_reader = csv.reader(district_data)
     
@@ -300,7 +308,7 @@ def get_all_deaths_by_state_over_time(start_date,end_date):
         return None
 
     print("Creating csv of deaths by state between",start_date,"and",end_date+"...")
-    file = open('.../deaths_by_district/deaths_by_state_'+start_date.replace("/","_")+"_to_"+end_date.replace("/","_")+".csv","w",newline="")
+    file = open('.../../deaths_by_district/deaths_by_state_'+start_date.replace("/","_")+"_to_"+end_date.replace("/","_")+".csv","w",newline="")
 
     writer = csv.writer(file)
     dates = dates_between(start_date,end_date)
@@ -329,7 +337,7 @@ def get_all_deaths_by_district_over_time(start_date,end_date):
         return None
 
     print("Creating csv of deaths by Congressional District between",start_date,"and",end_date,"...")
-    file = open('../deaths_by_district/deaths_by_district_'+start_date.replace("/","_")+'_to_'+end_date.replace("/","_")+'.csv','w',newline='')
+    file = open('../../deaths_by_district/deaths_by_district_'+start_date.replace("/","_")+'_to_'+end_date.replace("/","_")+'.csv','w',newline='')
 
     writer = csv.writer(file)
     writer.writerow(['state','district']+dates_between(start_date,end_date))
@@ -346,13 +354,7 @@ def get_all_deaths_by_district_over_time(start_date,end_date):
     file.close()
 
 if __name__ == '__main__':
-    # Downloads most recent version of Johns Hopkins COVID19 death data
-    url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv'
-    r = requests.get(url, allow_redirects=True)
-
-    f = open('../CSSEGIS-COVID-19/time_series_covid19_deaths_US.csv', 'wb')
-    f.write(r.content)
-    
+    update_death_data()
 
     print("COVID19 Deaths over time by Congressional District")
     start_date = input("Enter a start date (MM/DD/YY): ")
@@ -367,7 +369,7 @@ if __name__ == '__main__':
 
     #print(get_state_death_data("Alaska","4/20/20"))
     
-    deaths_by_district = open('../deaths_by_district/deaths_by_district.csv','w',newline='\n')
+    deaths_by_district = open('../../deaths_by_district/deaths_by_district.csv','w',newline='\n')
 
     district_writer = csv.writer(deaths_by_district)
     district_writer.writerow(['state','district','deaths'])
