@@ -1,11 +1,9 @@
-**/laina
 **/zips
 **congress-legislators-master
 *.txt
 *.yaml
 *.csv
+!emails-and-daily-confirmed.csv
+!emails-and-daily-deaths.csv
 *.xlsx
-**/scripts/emails-and-death-counts.py
-**/scripts/name-match.py
-**/scripts/name-strip.py
-**/scripts/word-frequency.py
+*.pptx
