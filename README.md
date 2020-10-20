@@ -10,4 +10,6 @@ Resulting data visualizations are found in the graphs folder
 
 Resulting data tables are in emails-and-daily-confirmed-.csv and emails-and-daily-deaths.csv
 
+More information about the research can be found in the poster .pdf
+
 Advised by Lindsey Cormack lcormack@stevens.edu
